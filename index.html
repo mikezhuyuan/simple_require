@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="jquery.js"></script>
+    <script src="lib/require.js"></script>
+    <script>
+        define('jquery', function(){return jQuery});
+        
+        //try different combination
+        //require(['a.js'], function(){
+        //require(['a.js', 'b.js'], function(){
+        //require([['a.js', 'c.js']], function(){        
+        require([['a.js', 'c.js'], 'jquery'], function(){
+            for(var i=0,l=arguments.length;i<l;i++)
+                console.log('used:' + arguments[i]);            
+        });
+    </script>
+</body>
+</html>
